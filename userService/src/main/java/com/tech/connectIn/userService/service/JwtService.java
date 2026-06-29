@@ -28,6 +28,7 @@ public class JwtService {
                 .claim("email",user.getEmail())
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 100)) // 100 minutes
+                .signWith(getSecretKey(), Jwts.SIG.HS256)  // Explicitly use HS256 — works for any key >= 32 chars
                 .compact();
     }
     public Long getUserIdFromToken(String token){

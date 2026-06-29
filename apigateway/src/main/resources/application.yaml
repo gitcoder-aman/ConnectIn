@@ -40,3 +40,6 @@ logging:
   level:
     org.springframework.cloud.gateway: DEBUG
     reactor.netty.http.client: DEBUG
+
+jwt:
+  secretKey: ${JWT_SECRET_KEY}

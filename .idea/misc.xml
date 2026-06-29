@@ -10,7 +10,13 @@
         <option value="$PROJECT_DIR$/connectionService/pom.xml" />
         <option value="$PROJECT_DIR$/discoveryServer/pom.xml" />
         <option value="$PROJECT_DIR$/apigateway/pom.xml" />
+        <option value="$PROJECT_DIR$/authService/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/authService/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="23" project-jdk-type="JavaSDK" />

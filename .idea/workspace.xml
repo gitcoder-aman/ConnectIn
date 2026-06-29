@@ -5,20 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dc453bd-eaac-4a2b-b45a-e98904c588bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/controller/ConnectionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/entity/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/repository/PersonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/ConnectionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/ConnectionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/tech/connectIn/apigateway/filter/AuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/tech/connectIn/apigateway/filter/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/AuthContextHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/RequestInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/client/ConnectionServiceClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/dto/PersonDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/controller/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/controller/ConnectionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/postService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postService/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/userService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/PostServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/PostServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/service/JwtService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,39 +66,47 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ApiGateWayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ConnectionApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DiscoveryServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PostServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.UserServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.DiscoveryServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.PostServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Spring Boot/SpringBootProject/ConnectIn/userService/src/main/java/com/tech/connectIn/userService&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ApiGateWayApplication.executor": "Run",
+    "Application.Application.executor": "Run",
+    "Application.AuthServiceApplication.executor": "Run",
+    "Application.ConnectionApplication.executor": "Debug",
+    "Application.DiscoveryServerApplication.executor": "Run",
+    "Application.PostServiceApplication.executor": "Debug",
+    "Application.UserServiceApplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AuthServiceApplication.executor": "Run",
+    "Spring Boot.DiscoveryServerApplication.executor": "Run",
+    "Spring Boot.PostServiceApplication.executor": "Run",
+    "Spring Boot.UserServiceApplication.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Spring Boot/SpringBootProject/ConnectIn/postService/src/main/java/com/tech/connectIn/postService",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Spring Boot\SpringBootProject\ConnectIn\postService\src\main\java\com\tech\connectIn\postService" />
+      <recent name="D:\Spring Boot\SpringBootProject\ConnectIn\authService\src\main\java\com\tech\connectIn\authService" />
+      <recent name="D:\Spring Boot\SpringBootProject\ConnectIn\authService\src\main\java\com\tech\connectIn\authService\service" />
       <recent name="D:\Spring Boot\SpringBootProject\ConnectIn\userService\src\main\java\com\tech\connectIn\userService" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tech.connectIn.authService.controller" />
+      <recent name="com.tech.connectIn.authService.config" />
+      <recent name="com.tech.connectIn.authService.repository" />
+      <recent name="com.tech.connectIn.apigateway.filter" />
       <recent name="com.tech.connectIn.userService.dto" />
-      <recent name="com.tech.connectIn.userService.config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -102,6 +115,15 @@
         <option value="Application" />
       </set>
     </option>
+    <option name="hiddenConfigurations">
+      <map>
+        <entry key="HttpClient.HttpRequestRunConfigurationType">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="configurationStatuses">
       <map>
         <entry key="Application">
@@ -109,7 +131,6 @@
             <map>
               <entry key="ApiGateWayApplication" value="STOPPED" />
               <entry key="ConnectionApplication" value="STOPPED" />
-              <entry key="DiscoveryServerApplication" value="STOPPED" />
               <entry key="PostServiceApplication" value="STOPPED" />
               <entry key="UserServiceApplication" value="STOPPED" />
             </map>
@@ -117,9 +138,17 @@
         </entry>
       </map>
     </option>
+    <option name="excludedNewTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DiscoveryServerApplication">
+  <component name="RunManager" selected="Application.ApiGateWayApplication">
     <configuration name="ApiGateWayApplication" type="Application" factoryName="Application">
+      <envs>
+        <env name="JWT_SECRET_KEY" value="asfhjsadfjhsdafsdajhfjasdhgfsdahvfnmswjhrhiuewafkmnsadkfjsad" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="com.tech.connectIn.apigateway.ApigatewayApplication" />
       <module name="apigateway" />
       <method v="2">
@@ -161,6 +190,20 @@
       </envs>
       <option name="MAIN_CLASS_NAME" value="com.tech.connectIn.userService.UserServiceApplication" />
       <module name="userService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="authService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tech.connectIn.authService.AuthServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tech.connectIn.authService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -210,15 +253,17 @@
     <list>
       <item itemvalue="Application.ApiGateWayApplication" />
       <item itemvalue="Application.ConnectionApplication" />
-      <item itemvalue="Application.DiscoveryServerApplication" />
       <item itemvalue="Application.PostServiceApplication" />
       <item itemvalue="Application.UserServiceApplication" />
+      <item itemvalue="Application.DiscoveryServerApplication" />
+      <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.DiscoveryServerApplication" />
       <item itemvalue="Spring Boot.PostServiceApplication" />
       <item itemvalue="Spring Boot.UserServiceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.AuthServiceApplication" />
         <item itemvalue="Spring Boot.DiscoveryServerApplication" />
         <item itemvalue="Spring Boot.UserServiceApplication" />
         <item itemvalue="Spring Boot.PostServiceApplication" />
@@ -241,5 +286,24 @@
       <updated>1782292826259</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/controller/ConnectionController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostServiceImpl.java</url>
+          <line>46</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
