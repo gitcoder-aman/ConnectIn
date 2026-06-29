@@ -1,6 +1,6 @@
 spring:
   application:
-    name: postService
+    name: post-service
   datasource:
     url: ${DB_URL}
     username: ${DB_USERNAME}
@@ -16,5 +16,10 @@ spring:
 server:
   port: 9010
   servlet:
-    context-path: /api/v1/posts
+    context-path: /posts
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 
