@@ -44,6 +44,7 @@ public class PostServiceImpl implements PostService {
         Long userId = AuthContextHolder.getCurrentUserId();
 
         List<PersonDto> personDtoList = connectionServiceClient.getFirstDegreeConnection(userId);
+
         Post post = postRepository.findById(postId).orElseThrow(() -> new ResourceNotFoundException("Post not found with ID: " + postId));
         return modelMapper.map(post, PostDto.class);
     }

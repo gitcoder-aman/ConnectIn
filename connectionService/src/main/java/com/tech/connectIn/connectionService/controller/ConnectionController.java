@@ -5,10 +5,7 @@ import com.tech.connectIn.connectionService.service.ConnectionService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,8 +18,9 @@ public class ConnectionController {
     private final ConnectionService connectionService;
 
     @GetMapping("/{userId}/first-degree")
-    public ResponseEntity<List<Person>>getFirstDegreeConnection(@PathVariable Long userId){
-        log.info("User id is {}",userId);
+    public ResponseEntity<List<Person>>getFirstDegreeConnection(@PathVariable Long userId, @RequestHeader("X-User-Id") Long userIdFromHeader){
+        log.info("User id is {}",userIdFromHeader);
+
         List<Person> personList = connectionService.getFirstDegreeConnectionsOfUser(userId);
         return ResponseEntity.ok(personList);
     }
