@@ -5,14 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dc453bd-eaac-4a2b-b45a-e98904c588bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/AuthContextHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/FeignClientInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/RequestInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/FeignClientInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ConnectIn.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/consumer/PostsConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/entity/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/repository/NotificationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/resources/kafka.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/config/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/event/PostCreated.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/event/PostLiked.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postService/src/main/resources/kafka.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/controller/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/controller/ConnectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/postService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostLikeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostLikeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postService/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +31,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="100" />
+    <option name="cachedIndexableFilesCount" value="106" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -55,34 +66,35 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ApiGateWayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ConnectionApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.DiscoveryServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PostServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.UserServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DiscoveryServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.PostServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Spring Boot/SpringBootProject/ConnectIn/connectionService/src/main/java/com/tech/connectIn/connectionService&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ApiGateWayApplication.executor": "Run",
+    "Application.Application.executor": "Run",
+    "Application.AuthServiceApplication.executor": "Run",
+    "Application.ConnectionApplication.executor": "Run",
+    "Application.DiscoveryServerApplication.executor": "Run",
+    "Application.NotificationServiceApplication.executor": "Run",
+    "Application.PostServiceApplication.executor": "Run",
+    "Application.UserServiceApplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AuthServiceApplication.executor": "Run",
+    "Spring Boot.DiscoveryServerApplication.executor": "Run",
+    "Spring Boot.PostServiceApplication.executor": "Run",
+    "Spring Boot.UserServiceApplication.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/SpringBoot/SpringBootProject/ConnectIn",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Spring Boot\SpringBootProject\ConnectIn\connectionService\src\main\java\com\tech\connectIn\connectionService" />
@@ -119,9 +131,10 @@
         <entry key="Application">
           <value>
             <map>
-              <entry key="ApiGateWayApplication" value="STOPPED" />
+              <entry key="ApiGateWayApplication" value="FAILED" />
               <entry key="ConnectionApplication" value="STOPPED" />
               <entry key="DiscoveryServerApplication" value="STOPPED" />
+              <entry key="NotificationServiceApplication" value="STOPPED" />
               <entry key="PostServiceApplication" value="STOPPED" />
               <entry key="UserServiceApplication" value="STOPPED" />
             </map>
@@ -135,7 +148,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ApiGateWayApplication">
+  <component name="RunManager" selected="Application.NotificationServiceApplication">
     <configuration name="ApiGateWayApplication" type="Application" factoryName="Application">
       <envs>
         <env name="JWT_SECRET_KEY" value="asfhjsadfjhsdafsdajhfjasdhgfsdahvfnmswjhrhiuewafkmnsadkfjsad" />
@@ -156,6 +169,18 @@
     <configuration name="DiscoveryServerApplication" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.tech.connectIn.discoveryServer.DiscoveryServerApplication" />
       <module name="discoveryServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificationServiceApplication" type="Application" factoryName="Application">
+      <envs>
+        <env name="DB_PASSWORD" value="3092" />
+        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/notificationDB" />
+        <env name="DB_USERNAME" value="postgres" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.tech.connectIn.notification_service.NotificationServiceApplication" />
+      <module name="notification-service" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -242,6 +267,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.NotificationServiceApplication" />
       <item itemvalue="Application.ApiGateWayApplication" />
       <item itemvalue="Application.ConnectionApplication" />
       <item itemvalue="Application.PostServiceApplication" />
@@ -277,21 +303,5 @@
       <updated>1782292826259</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/controller/ConnectionController.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/FeignClientInterceptor.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
