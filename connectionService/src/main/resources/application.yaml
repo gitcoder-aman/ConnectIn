@@ -12,6 +12,9 @@ spring:
     neo4j:
       database: neo4j
 
+  config:
+    import: classpath:kafka.yaml
+
 server:
   port: 9030
   servlet:
