@@ -5,45 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dc453bd-eaac-4a2b-b45a-e98904c588bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/consumer/UserServiceConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/exception/ApiError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/exception/BadRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/PersonService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/impl/PersonServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/userService/event/UserCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connectionService/src/main/resources/kafka.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/exception/ApiError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/exception/BadRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/service/NotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/service/impl/NotificationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/postService/event/PostCreated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/postService/event/PostLiked.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/config/KafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/event/UserCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/userService/src/main/resources/kafka.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/config/UploaderConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/controller/UploaderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/service/UploaderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/service/impl/CloudinaryUploaderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/AuthContextHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/AuthContextHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/FeignClientInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/FeignClientInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/RequestInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/RequestInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/controller/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/controller/ConnectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/entity/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/repository/PersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/ConnectionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/ConnectionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/ConnectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/impl/ConnectionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/consumer/PostsConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/consumer/PostsConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/entity/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/userService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/service/impl/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userService/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="138" />
+    <option name="cachedIndexableFilesCount" value="160" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,6 +64,7 @@
     "Application.DiscoveryServerApplication.executor": "Run",
     "Application.NotificationServiceApplication.executor": "Run",
     "Application.PostServiceApplication.executor": "Run",
+    "Application.UploaderServiceApplication.executor": "Run",
     "Application.UserServiceApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
@@ -153,8 +123,10 @@
             <map>
               <entry key="ApiGateWayApplication" value="STOPPED" />
               <entry key="ConnectionApplication" value="STOPPED" />
+              <entry key="DiscoveryServerApplication" value="STOPPED" />
               <entry key="NotificationServiceApplication" value="STOPPED" />
               <entry key="PostServiceApplication" value="STOPPED" />
+              <entry key="UploaderServiceApplication" value="STOPPED" />
               <entry key="UserServiceApplication" value="STOPPED" />
             </map>
           </value>
@@ -167,7 +139,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.NotificationServiceApplication">
+  <component name="RunManager" selected="Application.UploaderServiceApplication">
     <configuration name="ApiGateWayApplication" type="Application" factoryName="Application">
       <envs>
         <env name="JWT_SECRET_KEY" value="asfhjsadfjhsdafsdajhfjasdhgfsdahvfnmswjhrhiuewafkmnsadkfjsad" />
@@ -212,6 +184,20 @@
       </envs>
       <option name="MAIN_CLASS_NAME" value="com.tech.connectIn.postService.PostServiceApplication" />
       <module name="postService" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UploaderServiceApplication" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <envs>
+        <env name="CLOUD_NAME" value="drsrdkhn7" />
+        <env name="API_KEY" value="567275729665999" />
+        <env name="API_SECRET" value="HyMdGjnOfnx3GmLdLmmzV-FiduI" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.tech.connectIn.uploader_service.UploaderServiceApplication" />
+      <module name="uploader-service" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -288,6 +274,7 @@
     <list>
       <item itemvalue="Application.DiscoveryServerApplication" />
       <item itemvalue="Application.NotificationServiceApplication" />
+      <item itemvalue="Application.UploaderServiceApplication" />
       <item itemvalue="Application.ApiGateWayApplication" />
       <item itemvalue="Application.ConnectionApplication" />
       <item itemvalue="Application.PostServiceApplication" />
