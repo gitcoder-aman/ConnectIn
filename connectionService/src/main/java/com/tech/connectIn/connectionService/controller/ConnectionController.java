@@ -25,6 +25,24 @@ public class ConnectionController {
         return ResponseEntity.ok(personList);
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<Person>>getAllPersons(){
+        List<Person> personList = connectionService.getAllPersons();
+        return ResponseEntity.ok(personList);
+    }
+
+    @GetMapping("/requests/sent")
+    public ResponseEntity<List<Person>>getSentRequests(){
+        List<Person> personList = connectionService.getSentRequests();
+        return ResponseEntity.ok(personList);
+    }
+
+    @GetMapping("/requests/received")
+    public ResponseEntity<List<Person>>getReceivedRequests(){
+        List<Person> personList = connectionService.getReceivedRequests();
+        return ResponseEntity.ok(personList);
+    }
+
     @PostMapping("/request/{userId}")
     public ResponseEntity<Void> sendConnectionRequest(@PathVariable Long userId){
         connectionService.sendConnectionRequest(userId);
@@ -40,6 +58,12 @@ public class ConnectionController {
     @PostMapping("/reject/{senderId}")
     public ResponseEntity<Void> rejectConnectionRequest(@PathVariable Long senderId){
         connectionService.rejectConnectionRequest(senderId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/remove/{userId}")
+    public ResponseEntity<Void> removeConnection(@PathVariable Long userId){
+        connectionService.removeConnection(userId);
         return ResponseEntity.noContent().build();
     }
 }

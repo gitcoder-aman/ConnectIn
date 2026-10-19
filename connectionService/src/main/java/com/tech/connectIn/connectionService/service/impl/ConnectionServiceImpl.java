@@ -27,6 +27,26 @@ public class ConnectionServiceImpl implements ConnectionService {
     }
 
     @Override
+    public List<Person> getAllPersons(){
+        log.info("Getting all persons");
+        return personRepository.findAllPersons();
+    }
+
+    @Override
+    public List<Person> getSentRequests(){
+        Long userId = AuthContextHolder.getCurrentUserId();
+        log.info("Getting sent connection requests of user with ID:{}",userId);
+        return personRepository.sentRequests(userId);
+    }
+
+    @Override
+    public List<Person> getReceivedRequests(){
+        Long userId = AuthContextHolder.getCurrentUserId();
+        log.info("Getting received connection requests of user with ID:{}",userId);
+        return personRepository.receivedRequests(userId);
+    }
+
+    @Override
     public void sendConnectionRequest(Long receiverId) {
         Long senderId = AuthContextHolder.getCurrentUserId();
         log.info("sending connection request with senderId:{}, receiverId:{}",senderId,receiverId);
@@ -86,6 +106,24 @@ public class ConnectionServiceImpl implements ConnectionService {
         }
         personRepository.rejectConnectionRequest(senderId,receiverId);
         log.info("Successfully rejecting the connection request with senderId:{}, receiverId:{}",senderId,receiverId);
+    }
+
+    @Override
+    public void removeConnection(Long userId) {
+
+        Long currentUserId = AuthContextHolder.getCurrentUserId();
+        log.info("Removing connection between currentUserId:{} and userId:{}", currentUserId, userId);
+
+        if(currentUserId.equals(userId)){
+            throw new BadRequestException("Both sender and receiver are the same.");
+        }
+        boolean connected = personRepository.alreadyConnected(currentUserId, userId)
+                || personRepository.alreadyConnected(userId, currentUserId);
+        if(!connected){
+            throw new BadRequestException("The users are not connected, cannot remove connection.");
+        }
+        personRepository.removeConnection(currentUserId, userId);
+        log.info("Successfully removed the connection between currentUserId:{} and userId:{}", currentUserId, userId);
     }
 
 
