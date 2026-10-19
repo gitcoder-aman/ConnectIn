@@ -1,7 +1,6 @@
 package com.tech.connectIn.notification_service.exception;
 
 //import org.apache.coyote.BadRequestException;
-import com.tech.connectIn.userService.exception.ApiError;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
