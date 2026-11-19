@@ -207,26 +207,26 @@ Every technology listed below is verified from the build manifests (`pom.xml`), 
 ```mermaid
 flowchart TD
     %% External Traffic
-    Client(["🌐 Client / Mobile App / Web"]) -->|HTTP Requests| Ingress["🚪 Kubernetes Ingress<br/>(GCE Load Balancer: 34.95.113.61)"]
+    Client(["🌐 Client / Mobile App / Web"]) -->|HTTP Requests| Ingress["🚪 Kubernetes Ingress<br/>GCE Load Balancer: 34.95.113.61"]
     
     %% Ingress to Gateway
-    Ingress -->|Forward :80| Gateway["🛡️ API Gateway<br/>(Spring Cloud Gateway :8080)<br/>• JWT Authentication Interceptor<br/>• CORS & Path Stripping (/api/v1)"]
+    Ingress -->|Forward :80| Gateway["🛡️ API Gateway<br/>Spring Cloud Gateway :8080<br/>• JWT Authentication Interceptor<br/>• CORS & Path Stripping /api/v1"]
 
     %% Gateway to Services
-    Gateway -->|/api/v1/users/** -> /users/**| UserSvc["👤 User Service<br/>(Port :9020)"]
-    Gateway -->|/api/v1/posts/** -> /posts/**| PostSvc["📝 Post Service<br/>(Port :9010)"]
-    Gateway -->|/api/v1/connections/** -> /connections/**| ConnSvc["🤝 Connections Service<br/>(Port :9030)"]
+    Gateway -->|/api/v1/users/** to /users/**| UserSvc["👤 User Service<br/>Port :9020"]
+    Gateway -->|/api/v1/posts/** to /posts/**| PostSvc["📝 Post Service<br/>Port :9010"]
+    Gateway -->|/api/v1/connections/** to /connections/**| ConnSvc["🤝 Connections Service<br/>Port :9030"]
 
     %% Microservices to Databases
     UserSvc -->|JDBC :5432| UserDB[("🗄️ User DB<br/>PostgreSQL 18<br/>StatefulSet :5432")]
     PostSvc -->|JDBC :5432| PostDB[("🗄️ Posts DB<br/>PostgreSQL 18<br/>StatefulSet :5432")]
     ConnSvc -->|Bolt :7687| NeoDB[("🌐 Connections DB<br/>Neo4j 5.26.3<br/>StatefulSet :7687")]
-    NotifSvc["🔔 Notification Service<br/>(Port :9040)"] -->|JDBC :5432| NotifDB[("🗄️ Notification DB<br/>PostgreSQL 18<br/>StatefulSet :5432")]
+    NotifSvc["🔔 Notification Service<br/>Port :9040"] -->|JDBC :5432| NotifDB[("🗄️ Notification DB<br/>PostgreSQL 18<br/>StatefulSet :5432")]
 
     %% Synchronous Feign Calls
-    PostSvc -.->|Feign: POST /upload/file| UploadSvc["☁️ Uploader Service<br/>(Port :9050)"]
+    PostSvc -.->|Feign: POST /upload/file| UploadSvc["☁️ Uploader Service<br/>Port :9050"]
     UploadSvc -.->|HTTPS API| Cloudinary[("☁️ Cloudinary CDN")]
-    PostSvc -.->|Feign: GET /connections/core/{id}/first-degree| ConnSvc
+    PostSvc -.->|Feign: GET /connections/core/:userId/first-degree| ConnSvc
 
     %% Asynchronous Kafka Event Streaming
     subgraph KafkaBroker ["📬 Apache Kafka Cluster (KRaft Mode - StatefulSet :9092)"]
@@ -235,18 +235,18 @@ flowchart TD
         T3["Topic: post_liked_topic"]
     end
 
-    UserSvc ==>>|Produces UserCreatedEvent| T1
-    T1 ==>>|Consumes| ConnSvc
+    UserSvc ==>|Produces UserCreatedEvent| T1
+    T1 ==>|Consumes| ConnSvc
 
-    PostSvc ==>>|Produces PostCreated| T2
-    PostSvc ==>>|Produces PostLiked| T3
+    PostSvc ==>|Produces PostCreated| T2
+    PostSvc ==>|Produces PostLiked| T3
 
-    T2 ==>>|Consumes| NotifSvc
-    T3 ==>>|Consumes| NotifSvc
+    T2 ==>|Consumes| NotifSvc
+    T3 ==>|Consumes| NotifSvc
 
     %% Service Registry Note
     subgraph Discovery ["🔍 Local Environment Only"]
-        Eureka["Eureka Discovery Server<br/>(Port :8761)"]
+        Eureka["Eureka Discovery Server<br/>Port :8761"]
     end
 ```
 
