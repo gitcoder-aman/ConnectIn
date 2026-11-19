@@ -1,0 +1,19 @@
+eureka.client:
+  register-with-eureka: false
+  fetch-registry: false
+
+
+USER_SERVICE_URI: http://user-service
+POST_SERVICE_URI: http://post-service
+CONNECTION_SERVICE_URI: http://connections-service
+NOTIFICATION_SERVICE_URI: http://notification-service
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: "health,info"
+
+jwt:
+  secretKey: ${JWT_SECRET_KEY}
+

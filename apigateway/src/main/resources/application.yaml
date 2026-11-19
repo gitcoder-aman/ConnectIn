@@ -8,21 +8,21 @@ spring:
         webmvc:
           routes:
             - id: user-service
-              uri: lb://USER-SERVICE
+              uri: ${USER_SERVICE_URI:lb://USER-SERVICE}
               predicates:
                 - Path=/api/v1/users/**
               filters:
                 - StripPrefix=2
 
             - id: post-service
-              uri: lb://POST-SERVICE
+              uri: ${POST_SERVICE_URI:lb://POST-SERVICE}
               predicates:
                 - Path=/api/v1/posts/**
               filters:
                 - StripPrefix=2
 
             - id: connections-service
-              uri: lb://CONNECTIONS-SERVICE
+              uri: ${CONNECTION_SERVICE_URI:lb://CONNECTIONS-SERVICE}
               predicates:
                 - Path=/api/v1/connections/**
               filters:
@@ -43,3 +43,7 @@ logging:
 
 jwt:
   secretKey: ${JWT_SECRET_KEY}
+
+
+
+

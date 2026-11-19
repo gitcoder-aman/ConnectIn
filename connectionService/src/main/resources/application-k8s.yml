@@ -1,0 +1,13 @@
+eureka.client:
+  register-with-eureka: false
+  fetch-registry: false
+
+spring:
+  kafka:
+    bootstrap-servers: kafka:9092
+
+  neo4j:
+    uri: bolt://${DB_NAME}:7687
+    authentication:
+      username: ${DB_USERNAME}
+      password: ${DB_PASSWORD}

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
-@FeignClient(name = "uploader-service")
+@FeignClient(name = "uploader-service",url = "${UPLOADER_SERVICE_URI:}")
 public interface UploaderServiceClient {
 
     @PostMapping(

@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dc453bd-eaac-4a2b-b45a-e98904c588bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/client/UploaderServiceClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application-k8s.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/connectionService/src/main/resources/application-k8s.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application-k8s.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postService/src/main/resources/application-k8s.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploader-service/src/main/resources/application-k8s.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userService/src/main/resources/application-k8s.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ConnectIn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ConnectIn.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
@@ -14,7 +20,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/tech/connectIn/apigateway/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/tech/connectIn/apigateway/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/tech/connectIn/apigateway/filter/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/tech/connectIn/apigateway/filter/AuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apigateway/src/main/java/com/tech/connectIn/apigateway/filter/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/java/com/tech/connectIn/apigateway/filter/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apigateway/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apigateway/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connectionService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/AuthContextHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/AuthContextHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/FeignClientInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/FeignClientInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/RequestInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/auth/RequestInterceptor.java" afterDir="false" />
@@ -32,8 +43,8 @@
       <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/impl/ConnectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/impl/ConnectionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/impl/PersonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/connectionService/service/impl/PersonServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/userService/event/UserCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/java/com/tech/connectIn/userService/event/UserCreatedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectionService/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/connectionService/src/main/resources/kafka.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/connectionService/src/main/resources/kafka.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/consumer/PostsConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/consumer/PostsConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/entity/Notification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/exception/ApiError.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/notification_service/exception/ApiError.java" afterDir="false" />
@@ -46,14 +57,15 @@
       <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/postService/event/PostCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/postService/event/PostCreated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/postService/event/PostLiked.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/tech/connectIn/postService/event/PostLiked.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/kafka.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/kafka.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/postService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/AuthContextHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/AuthContextHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/FeignClientInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/FeignClientInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/RequestInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/RequestInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/auth/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/client/ConnectionServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/client/ConnectionServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/client/UploaderServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/client/UploaderServiceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/config/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/config/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/config/WebConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/controller/PostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/controller/PostLikesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/controller/PostLikesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/dto/PersonDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/dto/PersonDto.java" afterDir="false" />
@@ -74,10 +86,12 @@
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostLikeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostLikeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postService/src/main/resources/kafka.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/postService/src/main/resources/kafka.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploader-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/uploader-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/config/UploaderConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/config/UploaderConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/controller/UploaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/controller/UploaderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/service/UploaderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/service/UploaderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/service/impl/CloudinaryUploaderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/uploader-service/src/main/java/com/tech/connectIn/uploader_service/service/impl/CloudinaryUploaderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/userService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/config/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/config/KafkaConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/userService/src/main/java/com/tech/connectIn/userService/controller/UserController.java" afterDir="false" />
@@ -104,7 +118,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="162" />
+    <option name="cachedIndexableFilesCount" value="164" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -131,61 +145,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="2.858829853908015E-8" />
-      <entry key="MS500" value="0.030991147835571664" />
-      <entry key="S2" value="0.4195748185532708" />
-      <entry key="S5" value="0.7065188708394142" />
-      <entry key="S10" value="0.8405469624631398" />
-      <entry key="S30" value="0.955762554684918" />
-      <entry key="S60" value="1.1613510419651025" />
-      <entry key="M2" value="1.749378655724105" />
-      <entry key="M5" value="3.359464087145006" />
-      <entry key="M10" value="6.642633443200406" />
-      <entry key="M15" value="9.837317427936155" />
-      <entry key="M30" value="19.91800375649645" />
-      <entry key="H1" value="39.20630767542186" />
-      <entry key="H2" value="62.57535893719086" />
-      <entry key="H4" value="84.36264117607408" />
-      <entry key="D1" value="119.60770030937785" />
-      <entry key="W1" value="129.2331733114722" />
+      <entry key="MS100" value="1.4430897851114586" />
+      <entry key="MS500" value="2.268403541532432" />
+      <entry key="S2" value="3.4121439096812676" />
+      <entry key="S5" value="5.70984214336264" />
+      <entry key="S10" value="8.750504437893177" />
+      <entry key="S30" value="14.053922923286974" />
+      <entry key="S60" value="17.067683822681843" />
+      <entry key="M2" value="20.100407831105205" />
+      <entry key="M5" value="29.226854094240146" />
+      <entry key="M10" value="43.26268621391611" />
+      <entry key="M15" value="53.894592973325615" />
+      <entry key="M30" value="78.280491210107" />
+      <entry key="H1" value="120.02238976746983" />
+      <entry key="H2" value="185.8386222294514" />
+      <entry key="H4" value="263.20648718827067" />
+      <entry key="D1" value="398.71674963550555" />
+      <entry key="W1" value="436.1203056941164" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0000000085401295" />
-      <entry key="S30" value="1.003238740184476" />
-      <entry key="S60" value="1.0817763574259893" />
-      <entry key="M2" value="1.4466313966344453" />
-      <entry key="M5" value="2.969260817035352" />
-      <entry key="M10" value="6.007188642489529" />
-      <entry key="M15" value="8.405568920823292" />
-      <entry key="M30" value="12.422593532526733" />
-      <entry key="H1" value="15.607979005218617" />
-      <entry key="H2" value="17.976144185337603" />
-      <entry key="H4" value="19.897768037859038" />
-      <entry key="D1" value="22.998488848148796" />
-      <entry key="W1" value="23.844969617198934" />
+      <entry key="MS100" value="6.66015270956526E-34" />
+      <entry key="MS500" value="2.3834867755905398E-7" />
+      <entry key="S2" value="0.03100800856738165" />
+      <entry key="S5" value="0.370245681919843" />
+      <entry key="S10" value="0.884766021105925" />
+      <entry key="S30" value="1.8115593837805322" />
+      <entry key="S60" value="2.2925107966489273" />
+      <entry key="M2" value="2.7923388384403283" />
+      <entry key="M5" value="4.682637821649913" />
+      <entry key="M10" value="7.12288240164903" />
+      <entry key="M15" value="8.743723895967776" />
+      <entry key="M30" value="11.8072554483696" />
+      <entry key="H1" value="15.899056841480373" />
+      <entry key="H2" value="22.52204718170249" />
+      <entry key="H4" value="30.93236058486828" />
+      <entry key="D1" value="46.08761607959249" />
+      <entry key="W1" value="50.23983961442676" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="8.09895798637835E-4" />
-      <entry key="MS500" value="0.2674603138727856" />
-      <entry key="S2" value="1.1045412877607568" />
-      <entry key="S5" value="1.5632213836114655" />
-      <entry key="S10" value="1.765508769441973" />
-      <entry key="S30" value="1.9331060564768792" />
-      <entry key="S60" value="2.2291851324467746" />
-      <entry key="M2" value="3.18663134301339" />
-      <entry key="M5" value="6.3192113056185235" />
-      <entry key="M10" value="12.637906271071483" />
-      <entry key="M15" value="18.2308392385329" />
-      <entry key="M30" value="32.33091225686523" />
-      <entry key="H1" value="54.807883787567874" />
-      <entry key="H2" value="80.54770459360213" />
-      <entry key="H4" value="104.2582869799666" />
-      <entry key="D1" value="142.60578351556683" />
-      <entry key="W1" value="153.07808308788762" />
+      <entry key="MS100" value="1.3843764528984144" />
+      <entry key="MS500" value="2.2501197562889104" />
+      <entry key="S2" value="3.429729127885847" />
+      <entry key="S5" value="6.045112938679285" />
+      <entry key="S10" value="9.595565764853443" />
+      <entry key="S30" value="15.838526068501915" />
+      <entry key="S60" value="19.34293094477294" />
+      <entry key="M2" value="22.882096558008012" />
+      <entry key="M5" value="33.90214539720997" />
+      <entry key="M10" value="50.379759675698224" />
+      <entry key="M15" value="62.63346416506787" />
+      <entry key="M30" value="90.08424739976705" />
+      <entry key="H1" value="135.91835788761242" />
+      <entry key="H2" value="208.35752124093608" />
+      <entry key="H4" value="294.13617282505845" />
+      <entry key="D1" value="444.80359669807956" />
+      <entry key="W1" value="486.3600232579469" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -198,59 +212,62 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ApiGateWayApplication.executor": "Run",
-    "Application.Application.executor": "Run",
-    "Application.AuthServiceApplication.executor": "Run",
-    "Application.ConnectionApplication.executor": "Run",
-    "Application.DiscoveryServerApplication.executor": "Run",
-    "Application.NotificationServiceApplication.executor": "Run",
-    "Application.PostServiceApplication.executor": "Run",
-    "Application.UploadServiceApplication.executor": "Run",
-    "Application.UploaderServiceApplication.executor": "Run",
-    "Application.UserServiceApplication.executor": "Debug",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ApigatewayApplication.executor": "Run",
-    "Spring Boot.AuthServiceApplication.executor": "Run",
-    "Spring Boot.DiscoveryServerApplication.executor": "Run",
-    "Spring Boot.PostServiceApplication.executor": "Run",
-    "Spring Boot.UploaderServiceApplication.executor": "Run",
-    "Spring Boot.UserServiceApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/run/media/aman-kumar/New Volume/SpringBoot/SpringBootProject/ConnectIn",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ApiGateWayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
+    &quot;Application.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConnectionApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DiscoveryServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NotificationServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PostServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UploadServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UploaderServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UserServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.postService [package].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApigatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DiscoveryServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PostServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UploaderServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/SpringBoot/SpringBootProject/ConnectIn/userService/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\SpringBoot\SpringBootProject\ConnectIn\userService\src\main\resources" />
+      <recent name="D:\SpringBoot\SpringBootProject\ConnectIn\postService\src\main\resources" />
+      <recent name="D:\SpringBoot\SpringBootProject\ConnectIn\notification-service\src\main\resources" />
       <recent name="D:\SpringBoot\SpringBootProject\ConnectIn\connectionService\src\main\java\com\tech\connectIn\connectionService" />
       <recent name="D:\SpringBoot\SpringBootProject\ConnectIn\notification-service\src\main\java\com\tech\connectIn\notification_service" />
-      <recent name="D:\SpringBoot\SpringBootProject\ConnectIn\connectionService\src\main\java\com\tech\connectIn\userService" />
-      <recent name="D:\SpringBoot\SpringBootProject\ConnectIn\userService\src\main\resources" />
-      <recent name="D:\SpringBoot\SpringBootProject\ConnectIn\connectionService\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.tech.connectIn.postService.auth" />
@@ -310,7 +327,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ApiGateWayApplication">
+  <component name="RunManager" selected="Application.NotificationServiceApplication">
     <configuration name="ApiGateWayApplication" type="Application" factoryName="Application">
       <envs>
         <env name="JWT_SECRET_KEY" value="asfhjsadfjhsdafsdajhfjasdhgfsdahvfnmswjhrhiuewafkmnsadkfjsad" />
@@ -521,8 +538,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-34e2839f716b-intellij.indexing.shared.core-IU-262.9437.185" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.9437.185" />
+        <option value="bundled-jdk-30f59d01ecdd-ac68fc9d2b05-intellij.indexing.shared.core-IU-263.7307.200" />
+        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-IU-263.7307.200" />
       </set>
     </attachedChunks>
   </component>
@@ -593,11 +610,6 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/controller/PostController.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostServiceImpl.java</url>
           <line>49</line>
           <option name="timeStamp" value="18" />
@@ -628,11 +640,6 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/controller/PostController.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostServiceImpl.java</url>
           <line>73</line>
           <properties>
@@ -644,11 +651,6 @@
           <url>file://$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostServiceImpl.java</url>
           <line>74</line>
           <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/controller/PostLikesController.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/postService/src/main/java/com/tech/connectIn/postService/service/impl/PostLikeServiceImpl.java</url>
