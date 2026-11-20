@@ -13,8 +13,8 @@ public interface PersonRepository extends Neo4jRepository<Person, Long> {
     Optional<Person> findByUserId(Long userId);
 
     @Query("""
-            MATCH (p:Person {userId: $userId})-[:CONNECTED_TO]->(friend:Person)
-            RETURN friend
+            MATCH (p:Person {userId: $userId})-[:CONNECTED_TO]-(friend:Person)
+            RETURN DISTINCT friend
             """)
     List<Person> firstDegreeConnection(@Param("userId") Long userId);
 
@@ -43,7 +43,7 @@ public interface PersonRepository extends Neo4jRepository<Person, Long> {
     boolean connectionRequestExists(Long senderId, Long receiverId);
 
     @Query("""
-            MATCH (p1:Person) - [r:CONNECTED_TO]->(p2:Person) WHERE p1.userId = $senderId AND p2.userId = $receiverId
+            MATCH (p1:Person)-[r:CONNECTED_TO]-(p2:Person) WHERE p1.userId = $senderId AND p2.userId = $receiverId
             RETURN count(r) > 0
             """)
     boolean alreadyConnected(Long senderId, Long receiverId);
@@ -56,7 +56,8 @@ public interface PersonRepository extends Neo4jRepository<Person, Long> {
 
     @Query("""
             MATCH (p1:Person) - [r:REQUESTED_TO]-> (p2:Person) WHERE p1.userId = $senderId AND p2.userId = $receiverId
-            DELETE r CREATE (p1)-[:CONNECTED_TO]->(p2)
+            DELETE r 
+            CREATE (p1)-[:CONNECTED_TO]->(p2), (p2)-[:CONNECTED_TO]->(p1)
             """)
     void acceptConnectionRequest(Long senderId, Long receiverId);
 

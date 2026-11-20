@@ -15,6 +15,7 @@ spec:
       containers:
       - name: connections-service
         image: aman06383/connectin-app-connections-service
+        imagePullPolicy: Always
         resources:
           limits:
             memory: "400Mi"

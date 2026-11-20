@@ -35,6 +35,7 @@
    - [User Service APIs](#user-service-apis)
    - [Post Service APIs](#post-service-apis)
    - [Connections Service APIs](#connections-service-apis)
+   - [Notification Service APIs](#notification-service-apis)
    - [Internal Microservice APIs (Uploader Service)](#internal-microservice-apis-uploader-service)
 5. [Database Architecture & Persistence](#5-database-architecture--persistence)
    - [Relational Tier (PostgreSQL Instances)](#relational-tier-postgresql-instances)
@@ -74,7 +75,7 @@ Connect-In resolves these systemic problems by decomposing the platform into ind
 * **Multipart Media & Post Management:** Multipart post publishing with automated image offloading to Cloudinary CDN via a dedicated stateless media processor, user-specific feed retrieval, and post inspection.
 * **Real-Time Likes & Engagement:** Instant post liking and unliking with duplicate vote protection and atomic deletion.
 * **Asynchronous Event-Driven Fan-Out:** Distributed event choreography using Apache Kafka in KRaft mode. When posts are published or liked, events fan out to Kafka topics, decoupling activity producers from notification consumers.
-* **Asynchronous Notification Ingestion:** Autonomous notification persistence without slowing down the post publishing and like write-paths.
+* **Asynchronous Notification Ingestion & REST Queries:** Autonomous notification persistence via Kafka consumers with dedicated REST read endpoints (`/api/v1/notifications/core`) routed through API Gateway for frontend notification stream delivery.
 * **Centralized API Ingress & Gateway Security:** Single entry point via Spring Cloud Gateway WebMVC executing cross-cutting token inspection, header mutation (`X-User-Id`), path stripping, and CORS controls.
 * **Cloud-Native Kubernetes Infrastructure:** Containerized with Google Jib, orchestrated on Google Kubernetes Engine (GKE) with StatefulSets for databases, Deployments for stateless services, and a Google Cloud HTTP(S) Load Balancer (GCE Ingress).
 
@@ -101,10 +102,10 @@ Connect-In resolves these systemic problems by decomposing the platform into ind
     │        ├─(Feign Sync)──▶ Connection Service (Port 9030)
     │        │
     │        ├─[Kafka: post_created_topic]─┐
-    │        └─[Kafka: post_liked_topic]───┼──▶ Notification Service (Port 9040)
-    │                                      │        │
-    │                                      │        ▼
-    │                                      └──▶ PostgreSQL (notificationDB)
+    │        └─[Kafka: post_liked_topic]───┼──▶ Notification Service (Port 9040) ──▶ PostgreSQL (notificationDB)
+    │                                      │        ▲
+    │                                      │        │ (REST: /api/v1/notifications/**)
+    ├──▶ Notification Service (Port 9040) ─┴────────┘
     │
     └──▶ Connection Service (Port 9030) ──▶ Neo4j Graph Database (connections-db)
 ```
@@ -187,12 +188,12 @@ Every technology listed below is verified from the build manifests (`pom.xml`), 
 
 | Service Name | Source Directory | Responsibility | Primary Backends / DB | Communication Partners | K8s Service Name | Port (Local / Target) |
 |---|---|---|---|---|---|---|
-| **API Gateway** | `apigateway/` | Edge proxy, JWT authentication, CORS, path stripping (`StripPrefix=2`) | None (Stateless) | Routes to User, Post, and Connection services | `api-gateway` | `8080` (K8s: `80 -> 8080`) |
+| **API Gateway** | `apigateway/` | Edge proxy, JWT authentication, CORS, path stripping (`StripPrefix=2`) | None (Stateless) | Routes to User, Post, Connection, and Notification services | `api-gateway` | `8080` (K8s: `80 -> 8080`) |
 | **Discovery Server** | `discoveryServer/` | Netflix Eureka Service Registry (Local development profile) | In-Memory Registry | Eureka Clients | N/A (K8s uses CoreDNS) | `8761` |
 | **User Service** | `userService/` | User registration, authentication, JWT generation, password hashing | PostgreSQL (`userDB`) | Kafka (`user_created_topic`) | `user-service` | `9020` (K8s: `80 -> 9020`) |
 | **Post Service** | `postService/` | Post creation, image binding, user feed retrieval, like/unlike tracking | PostgreSQL (`postsDB`) | Uploader Service (Feign), Connection Service (Feign), Kafka (`post_created_topic`, `post_liked_topic`) | `posts-service` & `post-service` | `9010` (K8s: `80 -> 9010`) |
-| **Connections Service** | `connectionService/` | Social graph traversal, connection requests (send, accept, reject), friend queries | Neo4j Graph DB (`connections-db`) | Kafka (`user_created_topic` consumer), Inbound Feign from Post Service | `connections-service` | `9030` (K8s: `80 -> 9030`) |
-| **Notification Service** | `notification-service/` | Event consumer generating and persisting user notifications | PostgreSQL (`notificationDB`) | Kafka (`post_created_topic`, `post_liked_topic` consumer) | `notification-service` | `9040` (K8s: `80 -> 9040`) |
+| **Connections Service** | `connectionService/` | Social graph traversal, bidirectional connections, requests (send, accept, reject), friend queries | Neo4j Graph DB (`connections-db`) | Kafka (`user_created_topic` consumer), Inbound Feign from Post Service | `connections-service` | `9030` (K8s: `80 -> 9030`) |
+| **Notification Service** | `notification-service/` | Event consumer and REST service for user notification streams | PostgreSQL (`notificationDB`) | Kafka (`post_created_topic`, `post_liked_topic` consumer), Inbound Gateway HTTP | `notification-service` | `9040` (K8s: `80 -> 9040`) |
 | **Uploader Service** | `uploader-service/` | Stateless Cloudinary image upload wrapper | Cloudinary CDN (Stateless) | Inbound Feign from Post Service | `uploader-service` | `9050` (K8s: `80 -> 9050`) |
 
 ### High-Level Architectural Workflow
@@ -216,6 +217,7 @@ flowchart TD
     Gateway -->|/api/v1/users/** to /users/**| UserSvc["👤 User Service<br/>Port :9020"]
     Gateway -->|/api/v1/posts/** to /posts/**| PostSvc["📝 Post Service<br/>Port :9010"]
     Gateway -->|/api/v1/connections/** to /connections/**| ConnSvc["🤝 Connections Service<br/>Port :9030"]
+    Gateway -->|/api/v1/notifications/** to /notifications/**| NotifSvc["🔔 Notification Service<br/>Port :9040"]
 
     %% Microservices to Databases
     UserSvc -->|JDBC :5432| UserDB[("🗄️ User DB<br/>PostgreSQL 18<br/>StatefulSet :5432")]
@@ -581,6 +583,69 @@ Base URL: `http://34.95.113.61/api/v1/connections` (Controller: `/core`, Context
 * **Success Response (`204 No Content`):** Empty body.
 * **Error Responses:**
   - `400 Bad Request`: `"The users are not connected, cannot remove connection."`
+
+---
+
+### Notification Service APIs
+
+Base URL: `http://34.95.113.61/api/v1/notifications` (Controller: `/core`, Context Path: `/notifications`)
+
+| Method | Endpoint | Controller | Purpose | Auth Requirement |
+|---|---|---|---|---|
+| `GET` | `/api/v1/notifications/core/users/{userId}` | `NotificationController` | Retrieve notification history for specified user ordered by date descending | Authenticated |
+| `GET` | `/api/v1/notifications/core` | `NotificationController` | Fetch notifications for authenticated user via `X-User-Id` header or `?userId=` query param | Authenticated |
+
+#### 16. Get User Notifications by ID
+* **URL:** `GET http://34.95.113.61/api/v1/notifications/core/users/{userId}`
+* **Headers:** 
+  - `Authorization: Bearer <JWT_TOKEN>`
+* **Path Variables:** `userId` (Long) - Target user ID whose notifications are being queried.
+* **Success Response (`200 OK` - `List<Notification>`):**
+  ```json
+  [
+    {
+      "id": 37,
+      "userId": 7,
+      "message": "User with id: 6 has liked your post with id: 6",
+      "createdAt": "2026-11-20T12:45:09.229408"
+    },
+    {
+      "id": 33,
+      "userId": 7,
+      "message": "User with id: 6 has liked your post with id: 6",
+      "createdAt": "2026-11-20T12:18:36.270725"
+    },
+    {
+      "id": 32,
+      "userId": 7,
+      "message": "your connection with id: 6 has created this post: Hello Good morning",
+      "createdAt": "2026-11-20T12:18:02.927119"
+    }
+  ]
+  ```
+* **Error Responses:**
+  - `401 Unauthorized`: `"Missing or invalid Authorization header"`
+
+#### 17. Get Current User Notifications
+* **URL:** `GET http://34.95.113.61/api/v1/notifications/core`
+* **Headers:** 
+  - `Authorization: Bearer <JWT_TOKEN>`
+  - `X-User-Id: <USER_ID>` (Optional if `?userId=` query param provided)
+* **Query Parameters:** `userId` (Optional fallback if header not present)
+* **Success Response (`200 OK` - `List<Notification>`):**
+  ```json
+  [
+    {
+      "id": 37,
+      "userId": 7,
+      "message": "User with id: 6 has liked your post with id: 6",
+      "createdAt": "2026-11-20T12:45:09.229408"
+    }
+  ]
+  ```
+* **Error Responses:**
+  - `401 Unauthorized`: `"Missing or invalid Authorization header"`
+  - `400 Bad Request`: `"User ID must be provided via X-User-Id header or ?userId parameter"`
 
 ---
 
@@ -1150,7 +1215,14 @@ curl -X POST http://34.95.113.61/api/v1/posts/likes/1 \
 ```
 *(This triggers a `PostLiked` event on Kafka, which `notification-service` persists in `notificationDB`)*
 
-### 12. Bob Unlikes Alice's Post
+### 12. Alice Checks Her Notifications Stream
+```bash
+curl -X GET http://34.95.113.61/api/v1/notifications/core/users/1 \
+  -H "Authorization: Bearer $TOKEN_A"
+```
+*(Returns real-time Kafka event notification: `"User with id: 2 has liked your post with id: 1"`)*
+
+### 13. Bob Unlikes Alice's Post
 ```bash
 curl -X DELETE http://34.95.113.61/api/v1/posts/likes/1 \
   -H "Authorization: Bearer $TOKEN_B"
@@ -1247,12 +1319,13 @@ ConnectIn/
 │           ├── application.yaml
 │           ├── application-k8s.yml
 │           └── kafka.yaml                       # Kafka Consumer deserializer config
-├── notification-service/           # Asynchronous Notification Ingestion Microservice
+├── notification-service/           # Asynchronous Notification Ingestion & REST Microservice
 │   ├── pom.xml                     # JPA, Kafka Consumer, Postgres, Jib
 │   └── src/main/
 │       ├── java/com/tech/connectIn/notification_service/
 │       │   ├── NotificationServiceApplication.java
 │       │   ├── consumer/PostsConsumer.java      # Consumes post_created_topic & post_liked_topic
+│       │   ├── controller/NotificationController.java # REST endpoint (/core/users/{userId}, /core)
 │       │   ├── entity/Notification.java         # JPA Entity ('notification')
 │       │   ├── repository/NotificationRepository.java
 │       │   └── service/impl/NotificationServiceImpl.java
@@ -1356,11 +1429,10 @@ ConnectIn/
 
 ## 13. Future Architectural Roadmap
 
-1. **Notification REST Controller & Feed Aggregator:**
-   - Implement read endpoints on `notification-service` (`GET /api/v1/notifications`) so users can view their notification history in UI applications.
-   - Introduce an asynchronous Feed Service aggregating posts based on graph depth and engagement metrics.
-2. **Real-Time Push Notifications via WebSockets / SSE:**
-   - Integrate Spring WebFlux or STOMP WebSockets into the notification layer to push events directly to active browser sessions without client polling.
+1. **Real-Time Push Notifications via WebSockets / SSE:**
+   - Upgrade the current polling-based notification architecture with Spring WebFlux or STOMP WebSockets to stream Kafka events directly to active frontend sessions in real time.
+2. **Dedicated Feed Generation & Ranking Service:**
+   - Introduce an asynchronous Feed Service aggregating posts based on graph depth (2nd-degree connections) and engagement velocity metrics.
 3. **Resilience & Fault Tolerance:**
    - Add **Resilience4j** Circuit Breakers and Fallbacks across OpenFeign inter-service clients (`PostService ➔ UploaderService` and `PostService ➔ ConnectionService`) to handle downstream timeouts gracefully.
 4. **Distributed Tracing & Centralized Observability:**

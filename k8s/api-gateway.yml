@@ -14,6 +14,7 @@ spec:
       containers:
       - name: api-gateway
         image: aman06383/connectin-app-api-gateway
+        imagePullPolicy: Always
         resources:
           limits:
               memory: "500Mi"
@@ -32,9 +33,9 @@ spec:
           httpGet:
             path: /actuator/health
             port: 8080
-          initialDelaySeconds: 300
-          periodSeconds: 20
-          timeoutSeconds: 20
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          timeoutSeconds: 5
 
 ---
 apiVersion: v1

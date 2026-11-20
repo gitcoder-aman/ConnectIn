@@ -28,6 +28,13 @@ spring:
               filters:
                 - StripPrefix=2
 
+            - id: notification-service
+              uri: ${NOTIFICATION_SERVICE_URI:lb://NOTIFICATION-SERVICE}
+              predicates:
+                - Path=/api/v1/notifications/**
+              filters:
+                - StripPrefix=2
+
 server:
   port: 8080
 

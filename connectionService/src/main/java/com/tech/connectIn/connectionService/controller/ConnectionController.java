@@ -18,7 +18,7 @@ public class ConnectionController {
     private final ConnectionService connectionService;
 
     @GetMapping("/{userId}/first-degree")
-    public ResponseEntity<List<Person>>getFirstDegreeConnection(@PathVariable Long userId, @RequestHeader("X-User-Id") Long userIdFromHeader){
+    public ResponseEntity<List<Person>>getFirstDegreeConnection(@PathVariable Long userId, @RequestHeader(value = "X-User-Id", required = false) Long userIdFromHeader){
         log.info("User id is {}",userIdFromHeader);
 
         List<Person> personList = connectionService.getFirstDegreeConnectionsOfUser(userId);
