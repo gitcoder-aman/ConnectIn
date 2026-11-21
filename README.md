@@ -13,6 +13,7 @@
 > **Production Deployment Base URL:** `http://34.95.113.61/`  
 > **Source Repository:** [gitcoder-aman/ConnectIn](https://github.com/gitcoder-aman/ConnectIn.git)  
 > **Container Registry:** [Docker Hub: aman06383](https://hub.docker.com/u/aman06383)
+> **Live Check:** [Deploy of Google Kubernetes Engine:] (https://gitcoder-aman.github.io/connectin-frontend/)
 
 ---
 
